@@ -26,14 +26,12 @@ Route::post('login_post', [AuthController::class, 'login_post'])->name('admin.lo
 
 Route::post('forgot_post', [AuthController::class, 'forgot_post'])->name('admin.forgot_post');
 
-// http://localhost:8000/reset/I63U72sEsS8zdo6xDlcsywgP5Fgwew8Lue0jPiI6VYgoEWaH85 - pusemos aqui para dizer que a rota 
-// abaixo foi criado com base neste link.
 Route::get('reset/{token}', [AuthController::class, 'getReset']);
 
 Route::post('reset/{token}', [AuthController::class, 'postReset'])->name('admin.reset');
 
 
-Route::group(['middleware' => 'admin'], function () {
+// Route::group(['middleware' => 'admin'], function () {
 
     Route::get('admin/dashboard', [DashboardController::class, 'dashboard']);
 
@@ -44,7 +42,7 @@ Route::group(['middleware' => 'admin'], function () {
     Route::post('admin/clientes/edit/{id}', [ClienteController::class, 'update_clientes'])->name('cliente.update');
     Route::get('admin/clientes/delete/{id}', [ClienteController::class, 'delete_clientes'])->name('cliente.delete');
 
-    // Medicamentos start 
+    // Medicamentos start
 
     Route::get('admin/medicamentos', [MedicamentosController::class, 'medicamentos']);
     Route::get('admin/medicamentos/add', [MedicamentosController::class, 'add_medicamentos']);
@@ -61,6 +59,6 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('admin/medicamentos_estoque/delete/{id}', [MedicamentosController::class, 'medicamento_estoque_delete'])->name('delete.medicamentos_estoque');
     Route::get('admin/medicamentos_estoque/edit/{id}', [MedicamentosController::class, 'medicamento_estoque_edit'])->name('edit.medicamentos_estoque');
     // End Estoque de Medicamento
-});
+// });
 
 Route::get('logout', [AuthController::class, 'logout'])->name('admin.logout');

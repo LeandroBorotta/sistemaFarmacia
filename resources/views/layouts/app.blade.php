@@ -30,11 +30,7 @@
   <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
 
   <!-- =======================================================
-  * Template Name: NiceAdmin - v2.5.0
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+
 </head>
 
 <body>
@@ -54,10 +50,9 @@
                 </a>
               </div>
 
-              <!-- login and forgot -->
               @yield('content')
-              
-              
+
+
             </div>
         </div>
       </div>
